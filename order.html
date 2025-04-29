@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Оплата заказа</title>
+  <link rel="stylesheet" href="order.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  
+  <script>
+    function showSuccessMessage(event) {
+      event.preventDefault(); // Останавливаем отправку формы
+      document.getElementById('success-message').style.display = 'block'; // Показываем сообщение
+      document.getElementById('back-button').style.display = 'block'; // Показываем кнопку для возврата на главную
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="header-flex">
+      <img src="Логотип ОфисМарт.png" alt="Логотип" class="logo">
+      <div>
+        <h1>Оплата заказа</h1>
+        <p class="tagline">Введите данные вашей карты для завершения оплаты</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="payment-form">
+      <form action="confirmation.html" method="post" onsubmit="showSuccessMessage(event)">
+        <label for="card-number">Номер карты:</label>
+        <input type="text" id="card-number" name="card-number" required placeholder="0000 0000 0000 0000">
+
+        <label for="expiry-date">Дата истечения срока:</label>
+        <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM/YY">
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required placeholder="123">
+
+        <button type="submit">Оплатить</button>
+      </form>
+
+      <!-- Сообщение об успешной оплате -->
+      <div id="success-message" style="display: none; color: green; margin-top: 20px; font-size: 18px; text-align: center;">
+        Ваш заказ успешно оплачен!
+      </div>
+
+      <!-- Кнопка для возврата на главную -->
+      <div id="back-button" style="display: none; text-align: center; margin-top: 20px;">
+        <a href="main.html">
+          <button style="padding: 12px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+            Вернуться на главную
+          </button>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

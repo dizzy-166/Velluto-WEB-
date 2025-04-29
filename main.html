@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Velluto — Офисные стулья</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    function updateTotal() {
+      var productPrice = {
+        "ErgoMax 3000": 12990,
+        "ComfortPlus": 14500,
+        "SlimLine S1": 8990,
+        "BossChair Executive": 25990,
+        "EasyWork 100": 7490,
+        "AeroLight": 11200,
+        "ZenChair": 13800,
+        "SmartSeat": 9950,
+        "UltraForm": 15200,
+        "OfficePro": 10500,
+        "BasicWork": 5990,
+        "FlexiChair": 12200,
+        "CityLine": 7800,
+        "AirFlow": 9200,
+        "GrandComfort": 18500
+      };
+
+      var product = document.getElementById("product").value;
+      var quantity = document.getElementById("quantity").value;
+
+      if (product && quantity) {
+        var total = productPrice[product] * quantity;
+        document.getElementById("total").innerText = "Сумма: " + total + " ₽";
+      }
+    }
+  </script>
 </head>
+
 <body>
 
   <header>
     <div class="container header-flex">
-      <img src="ОфисМарт.png" alt="Velluto Logo" class="logo" />
-      <div>
-        <h1>Velluto</h1>
-        <p class="tagline">Офисные стулья с гарантией комфорта</p>
+      <div class="header-left">
+        <img src="Логотип ОфисМарт.png" alt="Velluto Logo" class="logo" />
+        <div class="branding-text">
+          <h1>Velluto</h1>
+          <p class="tagline">Офисные стулья с гарантией комфорта</p>
+        </div>
       </div>
       <nav>
         <ul>
@@ -28,137 +61,148 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section class="catalog-intro">
     <div class="container">
-      <h2>Комфорт и стиль для вашего офиса</h2>
-      <p>Выбирайте лучшие офисные стулья у нас</p>
-      <a href="#catalog" class="cta-button">Смотреть каталог</a>
+      <h2>Откройте для себя идеальное кресло</h2>
+      <p>
+        Комфорт начинается с правильного выбора. Мы собрали для вас коллекцию офисных кресел, которые сочетают в себе стиль, эргономику и надёжность.
+      </p>
     </div>
   </section>
+  
 
   <section id="catalog" class="catalog">
     <div class="container">
-      <h2>Каталог стульев</h2>
+      <h2>Каталог кресел</h2>
       <div class="product-grid">
 
+        <!-- Пример одной карточки: -->
         <div class="product-card">
           <img src="Стул_1.jpg" alt="Стул ErgoMax 3000" />
           <h3>ErgoMax 3000</h3>
           <p>Профессиональный стул с сетчатой спинкой и регулировкой высоты.</p>
-          <p class="price">12 990 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p class="price">119 000 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="ErgoMax 3000">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_2.jpg" alt="ComfortPlus" />
           <h3>ComfortPlus</h3>
-          <p>Мягкое кресло с поддержкой поясницы для длительной работы.</p>
-          <p class="price">14 500 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Мягкое кресло с поддержкой поясницы. Отлично подойдёт для длительной работы.</p>
+          <p class="price">132 500 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="ComfortPlus">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_3.jpg" alt="SlimLine S1" />
           <h3>SlimLine S1</h3>
-          <p>Элегантный стул для переговорных с минималистичным дизайном.</p>
-          <p class="price">8 990 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Элегантный и удобный стул для переговорных и офисных пространств.</p>
+          <p class="price">108 990 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="SlimLine S1">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_4.jpg" alt="BossChair Executive" />
           <h3>BossChair Executive</h3>
-          <p>Премиальное кресло с кожаной отделкой и функцией массажа.</p>
-          <p class="price">25 990 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Премиальное кресло с кожаной отделкой, функцией массажа и регулировкой наклона.</p>
+          <p class="price">198 500 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="BossChair Executive">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_5.jpg" alt="EasyWork 100" />
           <h3>EasyWork 100</h3>
-          <p>Лёгкий и прочный стул для ежедневной офисной работы.</p>
-          <p class="price">7 490 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Лёгкий и прочный офисный стул для повседневного использования.</p>
+          <p class="price">102 300 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="EasyWork 100">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_6.jpg" alt="AeroLight" />
           <h3>AeroLight</h3>
-          <p>Стул с ультра-лёгкой рамой и вентилируемой спинкой.</p>
-          <p class="price">11 200 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Современное кресло с вентилируемой спинкой и лёгкой рамой.</p>
+          <p class="price">111 200 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="AeroLight">Купить</a>
         </div>
 
         <div class="product-card">
-          <img src="https://picsum.photos/300/200?random=17" alt="ZenChair" />
+          <img src="Стул_13.jpg" alt="ZenChair" />
           <h3>ZenChair</h3>
-          <p>Эргономичная поддержка для спокойной и продуктивной работы.</p>
-          <p class="price">13 800 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Эргономичное кресло с поддержкой спины и шеи. Подходит для офиса или дома.</p>
+          <p class="price">139 800 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="ZenChair">Купить</a>
         </div>
 
         <div class="product-card">
-          <img src="https://picsum.photos/300/200?random=18" alt="SmartSeat" />
+          <img src="Стул_14.jpg" alt="SmartSeat" />
           <h3>SmartSeat</h3>
-          <p>Регулируемые подлокотники и комфортное сиденье для длительных сессий.</p>
-          <p class="price">9 950 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Надёжная модель с лаконичным дизайном и удобной посадкой для офиса.</p>
+          <p class="price">109 950 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="SmartSeat">Купить</a>
         </div>
 
         <div class="product-card">
-          <img src="https://picsum.photos/300/200?random=19" alt="UltraForm" />
+          <img src="Стул-15.jpg" alt="UltraForm" />
           <h3>UltraForm</h3>
-          <p>Поддержка поясницы и анатомическая форма сиденья для здоровья спины.</p>
-          <p class="price">15 200 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Поясничная поддержка и подлокотники — для продуктивной работы.</p>
+          <p class="price">154 200 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="UltraForm">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_7.jpg" alt="OfficePro" />
           <h3>OfficePro</h3>
-          <p>Модель для современного офиса с прочным каркасом и мягкой обивкой.</p>
-          <p class="price">10 500 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Модель для современного офиса: прочный каркас, мягкая обивка, строгий стиль.</p>
+          <p class="price">110 500 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="OfficePro">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_8.jpg" alt="BasicWork" />
           <h3>BasicWork</h3>
-          <p>Универсальный стул для бюджетного оснащения рабочих мест.</p>
-          <p class="price">5 990 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Универсальный бюджетный стул. Хорошо подойдёт для оснащения рабочих мест.</p>
+          <p class="price">99 500 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="BasicWork">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_9.jpg" alt="FlexiChair" />
           <h3>FlexiChair</h3>
-          <p>Стул с динамичной поддержкой для активной работы за столом.</p>
-          <p class="price">12 200 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Стул с подвижной спинкой и динамичной посадкой. Удобство на весь день.</p>
+          <p class="price">122 000 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="FlexiChair">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_10.jpg" alt="CityLine" />
           <h3>CityLine</h3>
-          <p>Компактный и стильный офисный стул для ограниченных пространств.</p>
-          <p class="price">7 800 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Стильное офисное кресло, подходящее для небольших пространств и open-space.</p>
+          <p class="price">107 800 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="CityLine">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_12.jpg" alt="AirFlow" />
           <h3>AirFlow</h3>
-          <p>Максимальная вентиляция для работы в жаркие дни.</p>
-          <p class="price">9 200 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Максимальная вентиляция спинки. Отличный выбор для жаркой погоды и климата.</p>
+          <p class="price">115 600 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="AirFlow">Купить</a>
         </div>
 
         <div class="product-card">
           <img src="Стул_11.jpg" alt="GrandComfort" />
           <h3>GrandComfort</h3>
-          <p>Большое мягкое кресло для руководителей и топ-менеджеров.</p>
-          <p class="price">18 500 ₽</p>
-          <a href="#contact" class="buy-button">Купить</a>
+          <p>Мягкое и просторное кресло. Идеально для руководителей и переговорных.</p>
+          <p class="price">168 500 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="GrandComfort">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="Стул_16.jpg" alt="VellutoManager" />
+          <h3>VellutoManager</h3>
+          <p>Кресло руководителя с подлокотниками и высокой спинкой.</p>
+          <p class="price">182 000 ₽</p>
+          <a href="#order-form" class="buy-button" data-product="VellutoManager">Купить</a>
         </div>
 
       </div>
@@ -195,12 +239,58 @@
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Контакты</h2>
-      <p>Для покупки или получения консультации свяжитесь с нами по телефону: +7 (495) 123-45-67 или по электронной почте: info@velluto.ru</p>
-    </div>
-  </section>
+  <main class="container">
+    <form id="order-form" class="order-form" action="payment.html" method="post">
+      <label for="product">Выберите товар:</label>
+      <select name="product" id="product" required onchange="updateTotal()">
+        <option value="">-- Выберите кресло --</option>
+        <option value="ErgoMax 3000">ErgoMax 3000</option>
+        <option value="ComfortPlus">ComfortPlus</option>
+        <option value="SlimLine S1">SlimLine S1</option>
+        <option value="BossChair Executive">BossChair Executive</option>
+        <option value="EasyWork 100">EasyWork 100</option>
+        <option value="AeroLight">AeroLight</option>
+        <option value="ZenChair">ZenChair</option>
+        <option value="SmartSeat">SmartSeat</option>
+        <option value="UltraForm">UltraForm</option>
+        <option value="OfficePro">OfficePro</option>
+        <option value="BasicWork">BasicWork</option>
+        <option value="FlexiChair">FlexiChair</option>
+        <option value="CityLine">CityLine</option>
+        <option value="AirFlow">AirFlow</option>
+        <option value="GrandComfort">GrandComfort</option>
+        <option value="VellutoManager">VellutoManager</option>
+      </select>
+
+      <label for="name">Ваше имя:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="quantity">Количество:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" required onchange="updateTotal()">
+
+      <label for="address">Адрес доставки:</label>
+      <input type="text" id="address" name="address" required>
+
+      <p id="total">К оплате: 0 ₽</p>
+
+      <a href="order.html">
+        <button type="button" class="buy-button">Перейти к оплате</button>
+      </a>
+    </form>
+  </main>
+
+  <footer class="contact-footer">
+    <h2>Свяжитесь с нами</h2>
+    <p>Если у вас возникли вопросы, предложения или нужна помощь — свяжитесь с нами удобным способом:</p>
+    <ul>
+      <li><strong>Телефон:</strong> <a href="tel:+78005553535">8 800 555-35-35</a></li>
+      <li><strong>Email:</strong> <a href="mailto:info@velluto.ru">info@velluto.ru</a></li>
+      <li><strong>Адрес:</strong> Москва, ул. Примерная, 12, офис 34</li>
+    </ul>
+  </footer>
 
   <footer>
     <div class="container">
@@ -208,5 +298,24 @@
     </div>
   </footer>
 
+  <!-- Скрипт для автоподстановки товара в форму -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll('.buy-button[data-product]');
+      const productSelect = document.getElementById('product');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', function () {
+          const selectedProduct = this.getAttribute('data-product');
+          if (productSelect) {
+            productSelect.value = selectedProduct;
+            updateTotal();
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
+
 </html>
