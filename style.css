@@ -1,0 +1,167 @@
+/* Общие стили для страницы */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px 0;
+  color: #333;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: 'Playfair Display', serif;
+}
+
+.tagline {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cta-button {
+  background-color: #fff;
+  padding: 12px 24px;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.cta-button:hover {
+  background-color: #e0e0e0;
+}
+
+.catalog {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Кнопки "Купить" */
+.buy-button {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.buy-button:active {
+  background-color: #e0e0e0;
+}
+
+/* Стилизация для блоков преимуществ и отзывов */
+.benefits, .reviews {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.benefit-items, .review-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.benefit-item, .review-card {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+}
+
+.review-card {
+  font-style: italic;
+}
+
+/* Подключение стилей для всех разделов */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #fff;
+  padding: 20px 0;
+  color: #333;
+  text-align: center;
+}
