@@ -76,7 +76,6 @@
       <h2>Каталог кресел</h2>
       <div class="product-grid">
 
-        <!-- Пример одной карточки: -->
         <div class="product-card">
           <img src="Стул_1.jpg" alt="Стул ErgoMax 3000" />
           <h3>ErgoMax 3000</h3>
@@ -288,7 +287,7 @@
     <ul>
       <li><strong>Телефон:</strong> <a href="tel:+78005553535">8 800 555-35-35</a></li>
       <li><strong>Email:</strong> <a href="mailto:info@velluto.ru">info@velluto.ru</a></li>
-      <li><strong>Адрес:</strong> Москва, ул. Примерная, 12, офис 34</li>
+      <li><strong>Адрес:</strong> Нижний Новгород, ул. Гагарина, 52, офис 5</li>
     </ul>
   </footer>
 
@@ -300,14 +299,14 @@
 
   <!-- Скрипт для автоподстановки товара в форму -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () { //Ожидание загрузки страницы
       const buttons = document.querySelectorAll('.buy-button[data-product]');
-      const productSelect = document.getElementById('product');
+      const productSelect = document.getElementById('product'); //Поиск кнопок и выпадающего списка:
 
-      buttons.forEach(button => {
+      buttons.forEach(button => { //Привязка события к каждой кнопке
         button.addEventListener('click', function () {
-          const selectedProduct = this.getAttribute('data-product');
-          if (productSelect) {
+          const selectedProduct = this.getAttribute('data-product'); //Получение выбранного товара и обновление поля выбора
+          if (productSelect) { //Обновление значения в выпадающем списке и пересчёт суммы
             productSelect.value = selectedProduct;
             updateTotal();
           }
